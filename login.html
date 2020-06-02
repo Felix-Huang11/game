@@ -43,13 +43,25 @@
                 font-size: 1em;
                 color: white;
             }
+            .buttonBox{
+                padding: 20px;
+            }
+            .button {
+                background-color: #e7e7e7; /* Green */
+                border: none;
+                padding: 10px 16px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
 
         </style>
     </head>
 
     <body>
         <div class="header">
-            <h1>GoAskMe Games Login</h1>
+            <h1>GoAskMe Wallet Login</h1>
         </div>
         <div id="qrcode">
             
@@ -70,6 +82,20 @@
                         expired:2020,
                         loginMemo:'user login',
                     }));
+
+                    document.getElementById("refresh").onclick = function() {
+                        qrcode.makeCode(JSON.stringify({
+                        protocol:'SimpleWallet',
+                        version:1.0,
+                        dappName:'goaskme games',
+                        dappIcon:'#',
+                        action:'login',
+                        uuID:'id',
+                        loginUrl:'https://game.goaskme.app',
+                        expired:2020,
+                        loginMemo:'user login',
+                    }));
+                    }
                     
                 }
             </script>
@@ -78,6 +104,9 @@
         </div>
         <div class="notice">
                 <span>Scan QR Code in wallet app to login</span>
+        </div>
+        <div class="buttonBox">
+            <button class="button" id="refresh">Refresh</button>
         </div>
 
         <div class="footer">
