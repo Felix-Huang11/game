@@ -1,0 +1,90 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>GoAskMe Wallet Login</title>
+<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<script src="./qrcode.js"></script>
+<link href="css/login_style.css" rel="stylesheet" type="text/css" media="all"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Transparent Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
+<!--web-fonts-->
+</head>
+
+<body>
+<!--header-->
+	<div class="header-w3l">
+		<h1>GoAskMe Wallet Login</h1>
+	</div>
+<!--//header-->
+
+<!--main-->
+<div class="main-content-agile">
+	<div class="sub-main-w3">
+	
+		<!-- <form action="#" method="post">
+			<input placeholder="Username or E-mail" name="Name" class="user" type="text" required=""><br>
+			<input  placeholder="Password" name="Password" class="pass" type="password" required=""><br>
+			<input type="submit" value="">
+		</form> -->
+		<div id="qr">
+			<script>
+                window.onload = function() {
+                    var qrcode = new QRCode(document.getElementById("qr"), {
+                        width: 260,
+                        height: 260
+                    });
+                    qrcode.makeCode(JSON.stringify({
+                        protocol:'SimpleWallet',
+                        version:1.0,
+                        dappName:'goaskme games',
+                        dappIcon:'#',
+                        action:'login',
+                        uuID:'id',
+                        loginUrl:'https://game.goaskme.app',
+                        expired:2020,
+                        loginMemo:'user login',
+                    }));
+
+                    document.getElementById("refresh").onclick = function() {
+                        qrcode.makeCode(JSON.stringify({
+                        protocol:'SimpleWallet',
+                        version:1.0,
+                        dappName:'goaskme games',
+                        dappIcon:'#',
+                        action:'login',
+                        uuID:'id',
+                        loginUrl:'https://game.goaskme.app',
+                        expired:2020,
+                        loginMemo:'user login',
+                    }));
+                    }
+                    
+                }
+            </script>
+		</div>
+		<div class="notice">
+                <span>Scan QR Code in wallet app to login</span>
+        </div>
+        <div class="buttonBox">
+            <button class="button" id="refresh">Refresh</button>
+        </div>
+	</div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<div class="footer">
+	<p>&copy; 2020 GoAskMe Games Login Form. All rights reserved </p>
+</div>
+<!--//footer-->
+
+</body>
+</html>
