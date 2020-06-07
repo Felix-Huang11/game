@@ -28,7 +28,7 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 body {
-    background:url('../images/bg2.jpg') no-repeat 62% 90%;
+   /* background:url('../images/bg2.jpg') no-repeat 62% 90%;*/
     background-size: cover;
     text-align: center;
 	font-family: 'Open Sans', sans-serif;
@@ -42,7 +42,7 @@ body {
 }
 .header-w3l h1{
 	font-size:3em;
-    color:white;
+    color:black;
     letter-spacing: 6px;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
@@ -63,7 +63,7 @@ body {
     margin: 200px auto;
     padding: 2.3em 0;
     font-size: 1em;
-    color: white;
+    color: black;
 }
 .buttonBox{
     padding: 20px;
@@ -87,7 +87,7 @@ body {
     background: none;
     border-bottom: 2px solid #eee;
     width: 20%;
-    color: white;
+    color: black;
     font-weight: 600;
 }
 .sub-main-w3 input[type="submit"] {
@@ -108,7 +108,7 @@ body {
 }
 .footer p {
     font-size: .9em;
-    color: white;
+    color: black;
 }
 .footer p a {
     color: #d20962;

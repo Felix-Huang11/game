@@ -62,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </script>
 		</div>
 		<div class="notice">
-                <span>scan the QR code in your wallet application to login</span>
+                <span>scan the QR code via your wallet application to login</span>
         </div>
         <div class="buttonBox">
             <button class="button" id="refresh">refresh</button>
@@ -76,6 +76,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<p>&copy; 2020 GoAskMe Games Login Page. All rights reserved </p>
 </div>
 <!--//footer-->
-
+<?php 
+     sleep(60);
+    $input = file_get_contents('php://input');
+     echo var_dump($input);
+    ?>
 </body>
 </html>
