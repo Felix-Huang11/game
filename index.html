@@ -16,6 +16,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--web-fonts-->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
 <!--web-fonts-->
+<script>
+function polling() {
+  
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("login").innerHTML = this.responseText;
+    }
+  };
+  xmlhttp.open("GET", "poll.php?q=" + "login", true);
+  xmlhttp.send();
+  
+}
+</script>
 </head>
 
 <body>
@@ -61,11 +75,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 }
             </script>
 		</div>
+    <div id="login"></div>
 		<div class="notice">
                 <span>scan the QR code via your wallet application to login</span>
         </div>
         <div class="buttonBox">
             <button class="button" id="refresh">refresh</button>
+            <button class="button" onclick="polling()">Login</button>
         </div>
 	</div>
 </div>
@@ -76,10 +92,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<p>&copy; 2020 GoAskMe Games Login Page. All rights reserved </p>
 </div>
 <!--//footer-->
-<?php 
-     sleep(60);
-    $input = file_get_contents('php://input');
-     echo var_dump($input);
-    ?>
+
 </body>
 </html>
