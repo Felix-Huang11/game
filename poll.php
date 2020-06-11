@@ -1,8 +1,8 @@
 <?php 
-    $input = file_get_contents('php://input');
-    if(strcmp($input, "") != 0){
-        header('Location:https://www.google.com');
-    }
+$input = file_get_contents("php://input");
+$myfile = fopen("data.txt","w+");
+fwrite($myfile,$input);
+fclose($myfile);
 
 
 ?>

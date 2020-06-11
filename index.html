@@ -22,10 +22,12 @@ function polling() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("login").innerHTML = this.responseText;
+      if(this.responseText.length != 0){
+        document.getElementById("login").innerHTML=this.responseText;
+      }
     }
   };
-  xmlhttp.open("GET", "poll.php?q=" + "login", true);
+  xmlhttp.open("GET", "poll.php?q="+"ac", true);
   xmlhttp.send();
   
 }
@@ -62,14 +64,14 @@ function polling() {
 
                 window.onload = function() {
                     
-                    var qrcode = new QRCode(document.getElementById("qr"), {
-                        width: 260,
-                        height: 260
-                    });
-                    qrcode.makeCode(JSON.stringify({protocol:'SimpleWallet',version:'1.0',dappName:'GoAskMe',dappIcon:'https://game.goaskme.app/game/images/favicon.ico',action:'login',uuID:makeid(10),loginUrl:'https://game.goaskme.app',expired:Math.round(new Date().getTime()/1000)+300,loginMemo:'user login',}));
+			var qrcode = new QRCode(document.getElementById("qr"), {
+				width: 260,
+				height: 260
+			});
+			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://game.goaskme.app/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
 
                     document.getElementById("refresh").onclick = function() {
-                        qrcode.makeCode(JSON.stringify({protocol:'SimpleWallet',version:'1.0',dappName:'GoAskMe',dappIcon:'https://game.goaskme.app/game/images/favicon.ico',action:'login',uuID:makeid(10),loginUrl:'https://game.goaskme.app',expired:Math.round(new Date().getTime()/1000)+300,loginMemo:'user login',}));
+                        qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://game.goaskme.app/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
                     }
                     
                 }
@@ -81,7 +83,7 @@ function polling() {
         </div>
         <div class="buttonBox">
             <button class="button" id="refresh">refresh</button>
-            <button class="button" onclick="polling()">Login</button>
+            <button class="button" value="123"  onclick="polling()">login</button>
         </div>
 	</div>
 </div>
