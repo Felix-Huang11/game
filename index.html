@@ -23,13 +23,16 @@ function polling() {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if(this.responseText.length != 0){
-        document.getElementById("login").innerHTML=this.responseText;
+        window.location.href = this.responseText;
       }
     }
   };
   xmlhttp.open("GET", "poll.php?q="+"ac", true);
   xmlhttp.send();
   
+}
+function redirect(){
+  window.location.href = "http://127.0.0.1:12345/game/login.html";
 }
 </script>
 </head>
@@ -73,6 +76,8 @@ function polling() {
                     document.getElementById("refresh").onclick = function() {
                         qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://game.goaskme.app/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
                     }
+
+
                     
                 }
             </script>
@@ -83,7 +88,7 @@ function polling() {
         </div>
         <div class="buttonBox">
             <button class="button" id="refresh">refresh</button>
-            <button class="button" value="123"  onclick="polling()">login</button>
+            <button class="button" value="123"  onclick="redirect()">login</button>
         </div>
 	</div>
 </div>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+	<META HTTP-EQUIV="expires" CONTENT="0">
+	<title>login</title>
+	<!-- <script src="require.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.4/lib/eosjs-ecc.min.js"
+    integrity="sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ=="
+    crossorigin="anonymous"></script>
+</head>
+<body >
+    <script type="text/javascript">
+
+		function readTextFile(file){
+
+		    var rawFile = new XMLHttpRequest();
+		    rawFile.open("GET", file, false);
+		    rawFile.onreadystatechange = function ()
+		    {
+		        if(rawFile.readyState === 4)
+		        {
+		            if(rawFile.status === 200 || rawFile.status == 0)
+		            {
+		                var info = rawFile.responseText;
+		                // alert(allText);
+		                // var obj = JSON.parse(allText);
+		                // alert(obj.timestamp+obj.sign+obj.account+obj.wallet+obj.ref);
+		                
+		                // obj.timestamp;
+		                // obj.sign;
+		                // obj.account;
+		                // obj.wallet;
+		                // obj.ref;
+		                if(info != ""){
+		                	window.location.replace("http://127.0.0.1:12345/game/game.html");
+		                }else{
+		                	alert("LOGIN ERROR, RETURN TO LOGIN PAGE");
+		                	window.location.replace("http://127.0.0.1:12345/game/index.html");
+		                }
+		            }
+		        }
+		    }
+		    rawFile.send(null);
+		}
+
+		readTextFile("data.txt");
+
+
+    </script>
+
+    <script type="text/javascript">
+
+    	(async()=>{
+		  let priv = await eosjs_ecc.randomKey()
+		  let pub = eosjs_ecc.privateToPublic(priv)
+		  let data = 'test'
+		  let signature = eosjs_ecc.sign(data,priv)
+		  let verified = eosjs_ecc.verify(signature,data,pub)
+		  console.log(verified)
+		})()
+    </script>
+
+    
+
+</body>
+</html>
