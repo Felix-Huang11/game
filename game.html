@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
 <title>GoAskMe Games</title>
 <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
@@ -17,15 +20,20 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--fonts-->
-<link href='http://fonts.useso.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.useso.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'> -->
 <!--//fonts-->
 <script src="js/modernizr.custom.js"></script>
         <link rel="stylesheet" type="text/css" href="css/component.css" />
 <style>
         body{
-                        background-color:rgb(250,250,210);
+                /*background-color:rgb(250,250,210);*/
+                background: url("./images/1.jpg") 0px 0px no-repeat;
+                background-size:cover;
                 }
+        .header .newTitle {
+            font-size:50px;color: #fff; font-family: "Audiowide-Regular"; letter-spacing:3px; margin-bottom:0 auto;
+            }
 </style>
 </head>
 <body>
@@ -35,14 +43,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <!---->
 
-                <div class="header-top" style="background-color:rgb(250,250,210);">
+                <div class="header-top" style="background: url("./images/1.jpg") 0px 0px no-repeat;
+                background-size:cover;">
                 <div class="container">
-                <div class="head-top">
+                <div class="head-top" >
                         <div class="logo">
-                                <h1 ><a href="https://goaskme.app" style="text-align:center; font-size:50px; text-shadow: 0 0 10px #8B4513; color:white;">GoAskMe</a></h1>
+                                <h1 ><a href="https://goaskme.app" style="text-align:center; font-size:50px; color:#F0E68C;">GoAskMe</a></h1>
                         </div>
 
-                                <div class="clearfix"> </div>
+                                <!-- <div class="clearfix"></div> -->
+                        <div class="top-nav">       
+                              <span class="menu"><img src="images/menu.png" alt=""> </span>
+                                
+                                    <ul>
+                                        <li class="active"><a class="color1" href="./game.html" style="font-size: 1.75em; color: #fd9f3e" >Home</a></li>
+                                        <li><a class="color2" href="./wallet.html" style="font-size: 1.75em; color:#d52685" >Wallet</a></li>
+                                        
+                                        <!-- <div class="clearfix"> </div> -->
+                                    </ul>
+
+                                    <!--script-->
+                                <script>
+                                    $("span.menu").click(function(){
+                                        $(".top-nav ul").slideToggle(500, function(){
+                                        });
+                                    });
+                            </script>
+
+                                </div>
                 </div>
                 </div>
         </div>
@@ -51,7 +79,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--content-->
         <div class="container">
                         <div class="games">
-                                <h2 style="font-size:4em"><span style="color:#FF0000">G</span><span style="color:#FF9900">a</span><span style="color:#009933">m</span><span style="color:#66CCFF">e</span><span style="color:#0000CC">s</span></h2>
+                                <!-- <h2><span style="color:#FF0000; font-size:1.25em">G</span><span style="color:#FF9900; font-size:1.25em">a</span><span style="color:#009933; font-size:1.25em" >m</span><span style="color:#66CCFF; font-size:1.25em">e</span><span style="color:#FF69B4; font-size:1.25em">s</span></h2> -->
+                        <div style="font-size:50px;color: #fff; font-family: Audiowide-Regular; letter-spacing:3px; margin:0 auto;">
+                            
+                            <h2 class="newTitle" style="font-size:50px;color: #fff; font-family: Audiowide-Regular; letter-spacing:3px; margin:0 auto;"> <span style="color:#FF0000; font-size:1.25em">G</span><span style="color:#FF9900; font-size:1.25em">a</span><span style="color:#009933; font-size:1.25em" >m</span><span style="color:#66CCFF; font-size:1.25em">e</span><span style="color:#FF69B4; font-size:1.25em">s</span></h2>
+                            <h2>
+                                <img class="titlePicture" src="./images/5.png" alt=" ">
+                            </h2>
+                        </div>
 
                         <div class="wrap">
                         <div class="main">
@@ -83,8 +118,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </script>
         </div>
         <!---->
-        <div class="footer">
-        <div class="footer-middle">
+        <!-- <div class="footer">
+        <div class="footer-middle"> -->
                         </div>
 
                 </div>

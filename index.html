@@ -71,10 +71,10 @@ function redirect(){
 				width: 260,
 				height: 260
 			});
-			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://game.goaskme.app/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
+			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://8f34e2d148f9.ngrok.io/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
 
                     document.getElementById("refresh").onclick = function() {
-                        qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://game.goaskme.app/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
+                        qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://8f34e2d148f9.ngrok.io/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
                     }
 
 

@@ -25,7 +25,6 @@
 		            if(rawFile.status === 200 || rawFile.status == 0)
 		            {
 		                var info = rawFile.responseText;
-		                // alert(allText);
 		                // var obj = JSON.parse(allText);
 		                // alert(obj.timestamp+obj.sign+obj.account+obj.wallet+obj.ref);
 		                
@@ -35,7 +34,42 @@
 		                // obj.wallet;
 		                // obj.ref;
 		                if(info != ""){
-		                	window.location.replace("http://127.0.0.1:12345/game/game.html");
+		                	// let data = timestamp + account + uuID + ref 
+		                	var obj = JSON.parse(info);
+		                	var data = obj.timestamp + obj.account + obj.uuID + obj.ref;
+		                	var sign = obj.sign;
+		                	rawFile.open("GET", "wallet.html?vote="+obj.account,true);
+		                	async function myVerify(sign, data){
+		                		try{
+		                			let publicK = eosjs_ecc.recover(sign,data);
+									let verified = eosjs_ecc.verify(sign,data,publicK);
+
+									if(verified){
+									  	window.location.replace("http://127.0.0.1:12345/game/game.html");
+									}else{
+									  	alert("LOGIN ERROR, RETURN TO LOGIN PAGE");
+									  	window.location.replace("http://127.0.0.1:12345/game/index.html");
+									}
+		                		}catch(err){alert("LOGIN ERROR: "+err);
+		                			window.location.replace("http://127.0.0.1:12345/game/index.html");
+		                		}
+		                		
+		                	}
+		                	myVerify(sign, data);
+		     //            	(async(sign, data)=>{
+		     //            		console.log(sign)
+							// 	let publicK = eosjs_ecc.recover(sign,data)
+							// 	let verified = eosjs_ecc.verify(sign,data,publicK)
+							// 	console.log(verified)
+							// 	if(verified){
+							// 	  	window.location.replace("http://127.0.0.1:12345/game/game.html");
+							// 	}else{
+							// 	  	alert("LOGIN ERROR, RETURN TO LOGIN PAGE");
+							// 	  	window.location.replace("http://127.0.0.1:12345/game/index.html");
+							// 	}
+								  
+							// })()
+
 		                }else{
 		                	alert("LOGIN ERROR, RETURN TO LOGIN PAGE");
 		                	window.location.replace("http://127.0.0.1:12345/game/index.html");
@@ -43,6 +77,7 @@
 		            }
 		        }
 		    }
+
 		    rawFile.send(null);
 		}
 
@@ -51,7 +86,7 @@
 
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
     	(async()=>{
 		  let priv = await eosjs_ecc.randomKey()
@@ -61,7 +96,7 @@
 		  let verified = eosjs_ecc.verify(signature,data,pub)
 		  console.log(verified)
 		})()
-    </script>
+    </script> -->
 
     
 

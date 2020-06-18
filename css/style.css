@@ -1,5 +1,5 @@
 body{
-	background:#fff;
+	/*background:#fff;*/
 	font-family: 'PT Sans', sans-serif;
 		
 }
@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 /*----*/
 .top-header{
-	background:#8fbf00;
+	background:#F0E68C;
 	 
 }
 .search{
@@ -85,7 +85,7 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .logo h1 a span{
 	text-decoration: none;
-	color:#8fbf00;
+	color:#F0E68C;
 }
 .top-nav{
 	float:right;
@@ -159,7 +159,7 @@ ul.wmuSliderPagination {
 	text-indent: -9999px;
 	width:8px;
 	height:8px;
-	background:#8fbf00;
+	background:#F0E68C;
 	border-radius:50px;
 	
 }
@@ -199,7 +199,7 @@ h2.new{
 }
  h2.new:after, h2.new:before{
 	content:"";
-	background:#8FBF00;
+	background:#F0E68C;
 	width:489px;
 	height:2px;
 	display:inline-block;
@@ -237,7 +237,7 @@ h2.new{
 }
 
 a.more-in{
-	background:#8fbf00;
+	background:#F0E68C;
   text-decoration: none;
   font-size: 1em;
   padding: 0.5em 1em;
@@ -271,7 +271,7 @@ a.fashion {
 	color:#000;
 }
 .grid-product p a:hover{
-	color:#8fbf00;
+	color:#F0E68C;
 }
 .late {
   padding: 2em 0 0;
@@ -286,7 +286,7 @@ a.fashion {
 a.comment{
 	text-decoration: none;
 	font-size: 1em;
-	color:#8fbf00;
+	color:#F0E68C;
 }
 a.comment i{
 	background:url(../images/img-sprite.png)no-repeat -41px -16px;
@@ -334,13 +334,13 @@ a.comment i{
 	display:block;	 
 }
 .footer-middle-in  ul li a:hover{
-	color:#8FBF00;
+	color:#F0E68C;
 }
 .footer-class{
 	color:#fff;
 	font-size:1em;
 	text-align:center;
-	background:#8FBF00;
+	background:#F0E68C;
 	padding:1em 0;	 
 }
 .footer-class a{
@@ -394,7 +394,7 @@ a.comment i{
 .send input[type="submit"]{
 	width: 14%;
 	font-size: 1.1em;
-	background:#8FBF00;
+	background:#F0E68C;
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
@@ -428,7 +428,7 @@ a.comment i{
 	color: #9A9898;
 }
 .address-more p a:hover{
-	color: #8FBF00;
+	color: #F0E68C;
 }
 /*--//contact--*/
 /*--four--*/
@@ -438,7 +438,7 @@ a.comment i{
   min-height: 477px;
 }
 .four h2{
-	  color: #8fbf00;
+	  color: #F0E68C;
   font-size: 7em;
 font-family: 'Montserrat Alternates', sans-serif;
   padding: 0.1em 0 0.2em;
@@ -472,7 +472,7 @@ font-family: 'Montserrat Alternates', sans-serif;
 	text-decoration: none;
 }
 .col-1 h4 a:hover{
-	color:#8fbf00;
+	color:#F0E68C;
 }
 .col-1 p{
 	color:#2d2d2d;
@@ -511,14 +511,14 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .blog-left b{
 	font-size:3.5em;
-	color:#8fbf00;
+	color:#F0E68C;
 	display:block;
 	height:55px;
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 .blog-left span{
 	font-size:1.7em;
-	color:#8fbf00;
+	color:#F0E68C;
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 ul.men-grid li{
@@ -531,7 +531,7 @@ ul.men-grid li{
 }
 .top-blog p a{
 	text-decoration:none;
-	color:#8fbf00;
+	color:#F0E68C;
 }
 .top-blog  a.fast{
 	text-decoration:none;
@@ -540,23 +540,23 @@ ul.men-grid li{
 	  font-family: 'Montserrat Alternates', sans-serif;
 }
 .top-blog a.fast:hover,.top-blog p a:hover,ul.popular li a:hover,a.more-dummy:hover{
-	color:#8fbf00;
+	color:#F0E68C;
 }
 .pagination > .active > a,.pagination > .active > a:hover{
-	background:#8FBF00;
-	border-color:#8FBF00;
+	background:#F0E68C;
+	border-color:#F0E68C;
 }
 .pagination {
   margin: 0;
 }
 .pagination > li > a:hover{
   color: #FFFFFF;
-  border-color: #8FBF00;
-  background: #8FBF00;
+  border-color: #F0E68C;
+  background: #F0E68C;
 }
 a.more {
   color: #fff;
-  background: #8FBF00;
+  background: #F0E68C;
   padding: 0.5em 1em;
   display: inline-block;
   text-decoration: none;
@@ -598,7 +598,7 @@ font-size: 2.5em;
 .single-bottom  input[type="submit"]{
 	width: 10%;
 	font-size: 1.3em;
-	background: #8fbf00;
+	background: #F0E68C;
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
@@ -656,7 +656,7 @@ font-size: 2.5em;
 	font-size: 1.1em;
 }
 ul.grid-part li a i{
-	background: #8fbf00;
+	background: #F0E68C;
 	width:5px;
 	height: 5px;
 	display: inline-block;
@@ -664,7 +664,7 @@ ul.grid-part li a i{
   margin-right: 10px;
 }
  ul.grid-part li a:hover{
-	color:#8fbf00;
+	color:#F0E68C;
 	padding-left:0.2em;
 }
 ul.grid-part {
@@ -709,7 +709,7 @@ h2.new:after, h2.new:before {
 	z-index: 9999;
 	left: 0%;
 	margin:2em 0em;
-	background:#8fbf00;
+	background:#F0E68C;
 	border:0;
 }
 .top-nav span.menu{
@@ -1164,3 +1164,9 @@ ul.grid-part li a {
   padding: 0;
 }
 }
+
+/*hhhhhhhhhhhhhhhhhhhhhhhh*/
+
+
+
+
