@@ -6,8 +6,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
+<META charset="utf-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<META HTTP-EQUIV="expires" CONTENT="0">
 <title>GoAskMe Wallet Login</title>
 <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.4/lib/eosjs-ecc.min.js"
+    integrity="sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ=="
+    crossorigin="anonymous"></script>
 <script src="./js/qrcode.js"></script>
 <link href="css/login_style.css" rel="stylesheet" type="text/css" media="all"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,23 +24,53 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css' />
 <!--web-fonts-->
 <script>
-function polling() {
-  
+function poll(str) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      if(this.responseText.length != 0){
-        window.location.href = this.responseText;
+      if(this.responseText.length == 0){
+        alert("LOGIN ERROR");
+      }else{
+        try{
+          var info = this.responseText;
+          var obj = JSON.parse(info);
+          var data = obj.timestamp + obj.account + obj.uuID + obj.ref;
+          var sign = obj.sign;
+          async function myVerify(sign, data, info){
+              
+                    let publicK = eosjs_ecc.recover(sign,data);
+                    let verified = eosjs_ecc.verify(sign,data,publicK);
+
+                    if(verified){
+                      var http = new XMLHttpRequest();
+                      // var url = 'game.html?info='+info;
+                      // url = encodeURI(url);
+                      // window.open(url);
+                      http.open("GET", "wallet.php?info=" + info, true);
+                      http.send();
+                      window.location.replace("http://localhost:12345/game/game.html");
+
+                    }else{
+                        alert("LOGIN ERROR");
+                    }
+                  
+                          
+          }
+          myVerify(sign, data, info);
+
+      }catch(err){
+                  alert("Please scan the QRcode and confirm on the phone");
+                }
       }
     }
   };
-  xmlhttp.open("GET", "poll.php?q="+"ac", true);
+  xmlhttp.open("GET", "poll.php?x="+str, true);
   xmlhttp.send();
   
 }
-function redirect(){
-  window.location.href = "http://127.0.0.1:12345/game/login.html";
-}
+// function redirect(){
+//   window.location.href = "http://127.0.0.1:12345/game/login.html";
+// }
 </script>
 </head>
 
@@ -47,12 +84,6 @@ function redirect(){
 <!--main-->
 <div class="main-content-agile">
 	<div class="sub-main-w3">
-	
-		<!-- <form action="#" method="post">
-			<input placeholder="Username or E-mail" name="Name" class="user" type="text" required=""><br>
-			<input  placeholder="Password" name="Password" class="pass" type="password" required=""><br>
-			<input type="submit" value="">
-		</form> -->
 		<div id="qr">
 			<script>
                 function makeid(length) {
@@ -65,30 +96,34 @@ function redirect(){
                    return result;
                 }
 
+                var uuid = makeid(10);
+
                 window.onload = function() {
                     
-			var qrcode = new QRCode(document.getElementById("qr"), {
-				width: 260,
-				height: 260
-			});
-			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://8f34e2d148f9.ngrok.io/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
+            			var qrcode = new QRCode(document.getElementById("qr"), {
+            				width: 260,
+            				height: 260
+            			});
+                  
+            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:uuid,loginUrl:"https://8f34e2d148f9.ngrok.io/game/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
 
-                    document.getElementById("refresh").onclick = function() {
-                        qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:makeid(10),loginUrl:"https://8f34e2d148f9.ngrok.io/game/poll.php",expired:Math.round(new Date().getTime()/1000)+300}));
-                    }
+                  document.getElementById("refresh").onclick = function() {
+                    uuid = makeid(10);
+                    qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://8f34e2d148f9.ngrok.io/game/images/favicon.ico",action:"login",uuID:uuid,loginUrl:"https://8f34e2d148f9.ngrok.io/game/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
+                  }
 
-
-                    
+                  // document.getElementById("login").onclick = poll(uuid);
+    
                 }
+                
             </script>
 		</div>
-    <div id="login"></div>
 		<div class="notice">
                 <span>scan the QR code via your wallet application to login</span>
         </div>
         <div class="buttonBox">
             <button class="button" id="refresh">refresh</button>
-            <button class="button" value="123"  onclick="redirect()">login</button>
+            <button class="button" id="login" onclick="poll(uuid)">login</button>
         </div>
 	</div>
 </div>

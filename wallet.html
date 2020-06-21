@@ -1,3 +1,6 @@
+<?php
+include 'wallet.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,18 +20,14 @@
 <meta name="keywords" content="Games Center Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<!-- <link href='http://fonts.useso.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'> -->
-<!--//fonts-->
 <script src="js/modernizr.custom.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/component.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
 <style>
         
 </style>
 </head>
 <body>
-    <?php file_put_contents("data.txt","");?>
+    
 <!--header-->
 <div class="header" >
 
@@ -73,12 +72,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="mail-form-agile">
                 <form action="#" method="post">
                     <div class="info">
-                        <!-- <div class="info_item"><span>ACCOUNT:</span><span>TEST.tp</span></div>
-                        <div class="info_item"><span>WALLET:</span><span>TOKEN POCKET</span></div>
-                        <div class="info_item"><span>POINTS:</span><span>0</span></div> -->
-                        <span>ACCOUNT: </span><span>TEST.tp</span><br>
-                        <span>WALLET: </span><span>TOKEN POCKET</span><br>
-                        <span>POINTS: </span><span>0</span>
+                        <?php include 'wallet.php';?>
+                        <span>ACCOUNT: </span><span><?php echo $_SESSION["account"]; ?></span><br>
+                        <span>WALLET: </span><span><?php echo $_SESSION["wallet"]; ?></span><br>
+                        <span>POINTS: </span><span><?php if ($points == NULL){echo 0;}; ?></span>
                         
                     </div>
 
