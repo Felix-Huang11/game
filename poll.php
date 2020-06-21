@@ -1,6 +1,5 @@
 <?php 
 	$uuid = $_GET["x"];
-	file_put_contents("uuid.txt", $uuid);
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
@@ -25,6 +24,7 @@
 	}else{
 		echo "";
 	}
+	$stmt->close();
 	$conn->close();
 
 

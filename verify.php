@@ -1,6 +1,5 @@
 <?php
 $input = file_get_contents("php://input");
-// file_put_contents("data.txt", $input);
 $obj = json_decode($input);
 $uuid = $obj->uuID;
 $account = $obj->account;
