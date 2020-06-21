@@ -80,10 +80,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
 
                     <div class="pay">
-                        <span style="color:#F0E68C">Points:Tokens = 5 : 1</span>
-                        <input type="number" min="0" name="name" placeholder="Enter the points " required=""/>
+                        <span style="color:#F0E68C">Points:Tokens = 5 : 1</span><br><br>
+                        <input type="number" min="5" name="name" class="points" style="display:none;" placeholder="Enter the points " required=""/>
                     
-                        <input type="submit" value="ADD POINTS">
+                        <input type="submit" class="check" id ="in" value="   TOP UP   "><br><br>
+                        <input type="submit" class="check" id ="out" value="WITHDRAW">
+                        <script type="text/javascript">
+                            $(function(){
+                                  $(".check").click(function(){
+                                    $(".points").show();
+                                  })
+                                })
+                        </script>
                     </div>
                     
                 </form>
