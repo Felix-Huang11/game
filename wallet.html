@@ -70,28 +70,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
     <div class="design-w3l">
             <div class="mail-form-agile">
-                <form action="#" method="post">
+                <form action="pay.html" method="post">
                     <div class="info">
-                        <?php include 'wallet.php';?>
                         <span>ACCOUNT: </span><span><?php echo $_SESSION["account"]; ?></span><br>
                         <span>WALLET: </span><span><?php echo $_SESSION["wallet"]; ?></span><br>
-                        <span>POINTS: </span><span><?php if ($points == NULL){echo 0;}; ?></span>
+                        <span>POINTS: </span><span><?php echo $points; ?></span>
                         
                     </div>
 
                     <div class="pay">
                         <span style="color:#F0E68C">Points:Tokens = 5 : 1</span><br><br>
-                        <input type="number" min="5" name="name" class="points" style="display:none;" placeholder="Enter the points " required=""/>
+                        <input type="number" min="0" name="points" class="points" placeholder="Enter the points " required=""/>
                     
                         <input type="submit" class="check" id ="in" value="   TOP UP   "><br><br>
                         <input type="submit" class="check" id ="out" value="WITHDRAW">
-                        <script type="text/javascript">
+                        <!-- <script type="text/javascript">
                             $(function(){
                                   $(".check").click(function(){
                                     $(".points").show();
                                   })
                                 })
-                        </script>
+                        </script> -->
                     </div>
                     
                 </form>
