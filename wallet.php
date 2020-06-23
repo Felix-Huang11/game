@@ -28,8 +28,9 @@
 		$points = $row["points"];
 		$stmt->close();
 		if($row == NULL){
-			$st = $conn->prepare("INSERT INTO game_user (account, wallet,points) VALUES (?, ?, ?)");
-			$st->bind_param("ssi", $_SESSION["account"], $_SESSION["wallet"], 0);
+			$new_points = 0.0;
+			$st = $conn->prepare("INSERT INTO game_user (account, wallet, points) VALUES (?, ?, ?)");
+			$st->bind_param("ssd", $_SESSION["account"], $_SESSION["wallet"], $new_points);
 			$st->execute();
 			$st->close();	
 		}else{

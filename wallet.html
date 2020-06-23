@@ -65,32 +65,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
         </div>
 </div>
+<script type="text/javascript">
+    function send(i)
+     {
+        if (i==0){
+            document.form1.action="pay.html";
+        }
+        else
+         {document.form1.action="";}
+         // document.form1.submit();
+     }
 
+</script>
 <!--content-->
 <div class="container">
     <div class="design-w3l">
             <div class="mail-form-agile">
-                <form action="pay.html" method="post">
+                <form name="form1" method="post">
                     <div class="info">
                         <span>ACCOUNT: </span><span><?php echo $_SESSION["account"]; ?></span><br>
                         <span>WALLET: </span><span><?php echo $_SESSION["wallet"]; ?></span><br>
                         <span>POINTS: </span><span><?php echo $points; ?></span>
                         
                     </div>
+                    
 
                     <div class="pay">
                         <span style="color:#F0E68C">Points:Tokens = 5 : 1</span><br><br>
-                        <input type="number" min="0" name="points" class="points" placeholder="Enter the points " required=""/>
+                        <input type="number" min="5" name="points" id="points" class="points" placeholder="Enter the points " required=""/>
                     
-                        <input type="submit" class="check" id ="in" value="   TOP UP   "><br><br>
-                        <input type="submit" class="check" id ="out" value="WITHDRAW">
-                        <!-- <script type="text/javascript">
-                            $(function(){
-                                  $(".check").click(function(){
-                                    $(".points").show();
-                                  })
-                                })
-                        </script> -->
+                        <input type="submit" class="check" id ="in" onclick="send(0)" value="   TOP UP   "><br><br>
+                        <input type="submit" class="check" id ="out" onclick="send(1)" value="WITHDRAW">
+                        
                     </div>
                     
                 </form>
