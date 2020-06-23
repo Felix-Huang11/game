@@ -2,3 +2,4 @@ create database goaskme_game;
 use goaskme_game;
 create table game_user(account VARCHAR(30), wallet VARCHAR(20),points FLOAT);
 create table game_login(uuid VARCHAR(20), account VARCHAR(30), myTimestamp INT(20), ref VARCHAR(20), sign VARCHAR(120));
+create table game_withdraw(account VARCHAR(30), GAMT_amount FLOAT, request_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, memo VARCHAR(20));
