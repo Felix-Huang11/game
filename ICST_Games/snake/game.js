@@ -417,7 +417,7 @@ window.onload = function() {
             
             context.fillStyle = "#ffffff";
             context.font = "24px Verdana";
-            drawCenterText("Press any key to start!", 0, canvas.height/2, canvas.width);
+            drawCenterText("Press any key or touch the screen to start!", 0, canvas.height/2, canvas.width);
             context.fillText("Your final score: "+score, canvas.width*0.6, canvas.height*0.125);
         }
     }
