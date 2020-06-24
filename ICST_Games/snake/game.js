@@ -587,13 +587,59 @@ window.onload = function() {
                 }
             }
             
-            // Grow for demonstration purposes
-            if (e.keyCode == 32) {
-                snake.grow();
+            // // Grow for demonstration purposes
+            // if (e.keyCode == 32) {
+            //     snake.grow();
+            // }
+        }
+    }
+
+    // Button event handlers
+    function moveleft() {
+        if (gameover) {
+            tryNewGame();
+        } 
+        else {
+            if (snake.direction != 1)  {
+                snake.direction = 3;
             }
+            console.log("test");
         }
     }
     
+    function moveup() {
+        if (gameover) {
+            tryNewGame();
+        } 
+        else {
+            if (snake.direction != 2)  {
+                snake.direction = 0;
+            }
+        }
+    }
+
+    function moveright() {
+        if (gameover) {
+            tryNewGame();
+        } 
+        else {
+            if (snake.direction != 3)  {
+                snake.direction = 1;
+            }
+        }
+    }
+
+    function movedown() {
+        if (gameover) {
+            tryNewGame();
+        } 
+        else {
+            if (snake.direction != 0)  {
+                snake.direction = 2;
+            }
+        }
+    }
+
     // Get the mouse position
     function getMousePos(canvas, e) {
         var rect = canvas.getBoundingClientRect();
