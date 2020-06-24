@@ -42,11 +42,17 @@ function newgame(){
 }
 
 function again(){
+	var str = JSON.stringify({sc : score, id : 2})
+	var http = new XMLHttpRequest();
+	http.open("GET", "/game/end_game.php?x=" + str, true);
+	http.send();
+	window.location.replace('/game/game.html');
 	// newgame();
 	// hideDialog();
 	// resetSocre();
-	window.alert("Game Over！ Your score：" + score);
-    window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
+	// window.alert("Game Over！ Your score：" + score);
+ //    window.location.replace('/game/game.html');
+
 }
 
 function conti(){
@@ -249,11 +255,15 @@ function isWin(){
 }
 
 function win(){
-	$(".dialog-success").css("display","block");
+	// $(".dialog-success").css("display","block");
+	$("#showScore").html("Game Over!<br>Your Score: "+ score);
+	$(".dialog-fail").css("display","block");
 }
 
 function gameover(){
+	$("#showScore").html("Game Over!<br>Your Score: " + score);
 	$(".dialog-fail").css("display","block");
+
 }
 
 function moveUp(){

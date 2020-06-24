@@ -188,8 +188,21 @@ function onUpdate() {
     for(i=0;i<deadlyArray.length;i++){
       if(getDistance(ball,deadlyArray[i])<(ballRadius*2)*(ballRadius*2)){
         gameOver = true;
-        window.alert("Game Over！ Your score：" + score);
-        window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
+        //pass value to database
+        
+        let r = window.confirm("Game Over!  Your Score: " + score);
+        if(r){
+          var str = JSON.stringify({sc : score, id : 3})
+          var http = new XMLHttpRequest();
+          http.open("GET", "/game/end_game.php?x=" + str, true);
+          http.send();
+          window.location.replace('/game/game.html');
+        }
+        // var str = JSON.stringify({sc : score, id : 3})
+        // var http = new XMLHttpRequest();
+        // http.open("GET", "/game/end_game.php?x=" + str, true);
+        // http.send();
+        // window.location.replace('/game/game.html');
       }	
     }
   }

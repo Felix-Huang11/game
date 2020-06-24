@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset = "UTF-8"/>
-	<title>2048小游戏</title>
+	<title>2048 Game</title>
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes"/>
 	<link rel = "stylesheet" type = "text/css" href = "2048.css">
 	<script type = "text/javascript" src = "jquery.min.js"></script>
@@ -14,7 +14,7 @@
 	<header>
 		<h1>2048</h1>
 		<!-- <a href ="javascript:newgame()" id = "newgame">新游戏</a> -->
-		<p>分数:<span id = "score">0</span></p>
+		<p>SCORE:<span id = "score">0</span></p>
 	</header>
 	<div id = "grid-container">
 		<div class = "grid-cell" id = "grid-cell-0-0"></div>
@@ -37,13 +37,13 @@
 		<div class = "grid-cell" id = "grid-cell-3-2"></div>
 		<div class = "grid-cell" id = "grid-cell-3-3"></div>
 		<div class = "dialog-success">
-			<div class = "success">恭喜您完成2048</div>
-			<div><a href ="javascript:again()" id = "newgame">重新开始</a></div>
-			<div><a href ="javascript:conti()" id = "continue">继续挑战</a></div>
+			<div class = "success"></div>
+			<div><a href ="javascript:again()" id = "newgame">Again</a></div>
+			<div><a href ="javascript:conti()" id = "continue">Continue</a></div>
 		</div>
 		<div class = "dialog-fail">
-			<div class = "fail">Game Over!</div>
-			<div><a href ="javascript:again()" id = "newgame">Quit</a></div>
+			<div class = "fail" id="showScore"></div>
+			<div><a href ="javascript:again()" id = "newgame">Confirm</a></div>
 		</div>
 	</div>
 	
