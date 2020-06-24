@@ -189,6 +189,7 @@ function onUpdate() {
       if(getDistance(ball,deadlyArray[i])<(ballRadius*2)*(ballRadius*2)){
         gameOver = true;
         window.alert("Game Over！ Your score：" + score);
+        window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
       }	
     }
   }
