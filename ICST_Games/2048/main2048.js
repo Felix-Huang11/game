@@ -42,9 +42,11 @@ function newgame(){
 }
 
 function again(){
-	newgame();
-	hideDialog();
-	resetSocre();
+	// newgame();
+	// hideDialog();
+	// resetSocre();
+	window.alert("Game Over！ Your score：" + score);
+    window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
 }
 
 function conti(){
