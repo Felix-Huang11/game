@@ -595,7 +595,7 @@ window.onload = function() {
     }
 
     // Button event handlers
-    function moveleft() {
+    document.getElementById('left').onclick = function moveleft() {
         if (gameover) {
             tryNewGame();
         } 
@@ -603,11 +603,10 @@ window.onload = function() {
             if (snake.direction != 1)  {
                 snake.direction = 3;
             }
-            console.log("test");
         }
     }
     
-    function moveup() {
+    document.getElementById('up').onclick = function moveup() {
         if (gameover) {
             tryNewGame();
         } 
@@ -618,7 +617,7 @@ window.onload = function() {
         }
     }
 
-    function moveright() {
+    document.getElementById('right').onclick = function moveright() {
         if (gameover) {
             tryNewGame();
         } 
@@ -629,7 +628,7 @@ window.onload = function() {
         }
     }
 
-    function movedown() {
+    document.getElementById('down').onclick = function movedown() {
         if (gameover) {
             tryNewGame();
         } 
