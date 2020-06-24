@@ -7,7 +7,8 @@
 <style type="text/css">
 body {
 	background-color:rgb(250,250,210);
-}	
+}
+
 canvas {
     padding-left: 0;
     padding-right: 0;
@@ -16,11 +17,69 @@ canvas {
     display: block;
     width: 900px;
 }
+
 div {
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 30px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 8px 4px;
+  transition-duration: 0.01s;
+  cursor: pointer;
+}
+
+.left {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.left:hover {
+  background-color: #DC143C;
+  color: white;
+}
+
+.up {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.up:hover {
+  background-color: #FF69B4;
+  color: white;
+}
+
+.right {
+  background-color: white;
+  color: black;
+  border: 2px solid #DC143C;
+}
+
+.right:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.down {
+  background-color: white;
+  color: black;
+  border: 2px solid #FF69B4;
+}
+
+.down:hover {
+  background-color: #008CBA;
+  color: white;
 }
 </style>
 </head>
@@ -29,10 +88,10 @@ div {
 <canvas id="viewport" width="640" height="480"></canvas>
 <script type="text/javascript" src="game.js"></script>
 <div style="text-align:center;width:480px;">
-  <button id="up">UP</button><br><br>
-  <button id="left">LEFT</button>
-  <button id="right">RIGHT</button><br><br>
-  <button id="down">DOWN</button>
+	<button id="up"  class="button up">UP</button><br><br>
+	<button id="left" class="button left">LEFT</button>
+	<button id="right" class="button right">RIGHT</button><br><br>
+	<button id="down" class="button down">DOWN</button>
 </div>
 </body>
 </html>
