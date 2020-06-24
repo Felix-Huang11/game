@@ -16,11 +16,23 @@ canvas {
     display: block;
     width: 900px;
 }
+div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 </style>
-<script type="text/javascript" src="game.js"></script>
 </head>
 <body>
 <br /><br /><br /><br /><br />
 <canvas id="viewport" width="640" height="480"></canvas>
+<script type="text/javascript" src="game.js"></script>
+<div style="text-align:center;width:480px;">
+  <button onclick="moveup()">UP</button><br><br>
+  <button onclick="moveleft()">LEFT</button>
+  <button onclick="moveright()">RIGHT</button><br><br>
+  <button onclick="movedown()">DOWN</button>
+</div>
 </body>
 </html>
