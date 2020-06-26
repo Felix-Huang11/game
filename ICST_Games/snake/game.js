@@ -430,6 +430,7 @@ window.onload = function() {
         }
         if (scores.length == 1) {
             window.alert("Game Over！ Your score：" + score);
+            scores.length = 0;
             window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
         }
     }
