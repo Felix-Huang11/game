@@ -428,9 +428,11 @@ window.onload = function() {
             drawCenterText("Press any key or touch the screen to start!", 0, canvas.height/2, canvas.width);
             context.fillText("Your current score: "+score, canvas.width*0.545, canvas.height*0.125);
         }
+        console.log(scores);
         if (scores.length == 1) {
             window.alert("Game Over！ Your score：" + score);
-            window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
+            scores.length = 0;
+            window.location.replace('/game/game.html');
         }
     }
     
