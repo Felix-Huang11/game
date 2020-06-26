@@ -193,9 +193,10 @@ window.onload = function() {
     
     // Variables
     var score = 0;              // Score
-    var gameover = true;        // Game is over
-    var gameovertime = 1;       // How long we have been game over
-    var gameoverdelay = 0.5;    // Waiting time after game over
+    var restart = true;        // Restart
+    var restarttime = 1;       // How long we have been game over
+    var restartdelay = 0.5;    // Waiting time after game over
+    var scores = [];            // Scores
     
     // Initialize the game
     function init() {
@@ -211,17 +212,21 @@ window.onload = function() {
         
         // New game
         newGame();
-        gameover = true;
     
         // Enter main loop
         main(0);
+
+        // // Game over
+        // if (gameover) {
+        //     gameover();
+        // }
     }
     
     // Check if we can start a new game
     function tryNewGame() {
-        if (gameovertime > gameoverdelay) {
+        if (restarttime > restartdelay) {
             newGame();
-            gameover = false;
+            restart = false;
         }
     }
     
@@ -239,7 +244,7 @@ window.onload = function() {
         score = 0;
         
         // Initialize variables
-        gameover = false;
+        restart = true;
     }
     
     // Add an apple to the level at an empty position
@@ -317,10 +322,10 @@ window.onload = function() {
         // Update the fps counter
         updateFps(dt);
         
-        if (!gameover) {
+        if (!restart) {
             updateGame(dt);
         } else {
-            gameovertime += dt;
+            restarttime += dt;
         }
     }
     
@@ -337,7 +342,8 @@ window.onload = function() {
             if (nx >= 0 && nx < level.columns && ny >= 0 && ny < level.rows) {
                 if (level.tiles[nx][ny] == 1) {
                     // Collision with a wall
-                    gameover = true;
+                    restart = true;
+                    scores.push(score);
                 }
                 
                 // Collisions with the snake itself
@@ -347,12 +353,13 @@ window.onload = function() {
                     
                     if (nx == sx && ny == sy) {
                         // Found a snake part
-                        gameover = true;
+                        restart = true;
+                        scores.push(score);
                         break;
                     }
                 }
                 
-                if (!gameover) {
+                if (!restart) {
                     // The snake is allowed to move
 
                     // Move the snake
@@ -377,11 +384,12 @@ window.onload = function() {
                 }
             } else {
                 // Out of bounds
-                gameover = true;
+                restart = true;
+                scores.push(score);
             }
             
-            if (gameover) {
-                gameovertime = 0;
+            if (restart) {
+                restarttime = 0;
             }
         }
     }
@@ -411,14 +419,18 @@ window.onload = function() {
         drawSnake();
             
         // Game over
-        if (gameover) {
+        if (restart) {
             context.fillStyle = "rgba(0, 0, 0, 0.5)";
             context.fillRect(0, 0, canvas.width, canvas.height);
             
             context.fillStyle = "#ffffff";
             context.font = "24px Verdana";
             drawCenterText("Press any key or touch the screen to start!", 0, canvas.height/2, canvas.width);
-            context.fillText("Your final score: "+score, canvas.width*0.6, canvas.height*0.125);
+            context.fillText("Your current score: "+score, canvas.width*0.545, canvas.height*0.125);
+        }
+        if (scores.length == 1) {
+            window.alert("Game Over！ Your score：" + score);
+            window.location.replace('D:/phpstudy_pro/WWW/game/game.html');
         }
     }
     
@@ -551,7 +563,7 @@ window.onload = function() {
         // Get the mouse position
         var pos = getMousePos(canvas, e);
         
-        if (gameover) {
+        if (restart) {
             // Start a new game
             tryNewGame();
         } else {
@@ -562,7 +574,7 @@ window.onload = function() {
     
     // Keyboard event handler
     function onKeyDown(e) {
-        if (gameover) {
+        if (restart) {
             tryNewGame();
         } else {
             if (e.keyCode == 37 || e.keyCode == 65) {
@@ -596,7 +608,7 @@ window.onload = function() {
 
     // Button event handlers
     document.getElementById('left').onclick = function moveleft() {
-        if (gameover) {
+        if (restart) {
             tryNewGame();
         } 
         else {
@@ -607,7 +619,7 @@ window.onload = function() {
     }
     
     document.getElementById('up').onclick = function moveup() {
-        if (gameover) {
+        if (restart) {
             tryNewGame();
         } 
         else {
@@ -618,7 +630,7 @@ window.onload = function() {
     }
 
     document.getElementById('right').onclick = function moveright() {
-        if (gameover) {
+        if (restart) {
             tryNewGame();
         } 
         else {
@@ -629,7 +641,7 @@ window.onload = function() {
     }
 
     document.getElementById('down').onclick = function movedown() {
-        if (gameover) {
+        if (restart) {
             tryNewGame();
         } 
         else {
