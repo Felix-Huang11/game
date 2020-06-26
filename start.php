@@ -32,5 +32,6 @@ if($points >= 5){
 	$st->close();
 }
 $conn->close();
+//points get into bonus_pool, for the sake of convinience, this part implemented in end_game.php.
 
 ?>

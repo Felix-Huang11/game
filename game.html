@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["account"] == NULL){
+echo "<script>alert('Error: Please scan the code and login again'); window.location.replace('index.html');</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul>
                         <li class="active"><a class="color1" href="./game.html" style="font-size: 1.75em; color: #fd9f3e" >Home</a></li>
                         <li><a class="color2" href="./wallet.html" style="font-size: 1.75em; color:#d52685" >Wallet</a></li>
+                        <li><a class="color3" href="./rating.html" style="font-size: 1.75em; color:#FF0000" >Rating</a></li>
                         
                         <!-- <div class="clearfix"> </div> -->
                     </ul>

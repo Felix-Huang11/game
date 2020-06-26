@@ -6,3 +6,7 @@ create table game_withdraw(account VARCHAR(30), GAMT_amount FLOAT, request_time 
 create table game_snake(account VARCHAR(30), score INT, last_game_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
 create table game_2048(account VARCHAR(30), score INT, last_game_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
 create table game_hitball(account VARCHAR(30), score INT, last_game_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
+create table game_bonus_pool(game_id INT, game_name VARCHAR(20), cumulative_points INT, update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
+insert into game_bonus_pool values(1, "snake", 0, DEFAULT);
+insert into game_bonus_pool values(2, "2048", 0, DEFAULT);
+insert into game_bonus_pool values(3, "hitball", 0, DEFAULT);

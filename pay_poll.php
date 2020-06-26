@@ -5,18 +5,22 @@
 //rely on the format of return value!!!!
 //
 $input = file_get_contents("php://input");
+// file_put_contents("data.txt",$input);
 $json = json_decode($input);
 $res = $json->result;
+$txid = $json->txID;
 $data = json_encode($json->data);
 $account = json_decode($data)->wallet;
 // file_put_contents("data.txt",$account);
 //debug
 $processed = json_decode($data)->processed;
 $action_traces = ($processed->action_traces)[0];
-$inline_traces = ($action_traces->inline_traces)[1];
-$points = floatval($inline_traces->act->data->quantity)*5;
+$points = floatval($action_traces->act->data->quantity)*5;
 // file_put_contents("data.txt",$points);
 if($res == 1){
+	// if($points == NULL and $txid != NULL){
+		
+	// }
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
