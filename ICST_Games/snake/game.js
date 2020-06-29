@@ -428,11 +428,20 @@ window.onload = function() {
             drawCenterText("Press any key or touch the screen to start!", 0, canvas.height/2, canvas.width);
             context.fillText("Your current score: "+score, canvas.width*0.545, canvas.height*0.125);
         }
-        console.log(scores);
         if (scores.length == 1) {
-            window.alert("Game Over！ Your score：" + score);
-            scores.length = 0;
-            window.location.replace('/game/game.html');
+            // window.alert("Game Over！ Your score：" + score);
+            // scores.length = 0;
+            // window.location.replace('/game/game.html');
+            let r = window.confirm("Game Over!  Your Score: " + score);
+            if(r){
+              var str = JSON.stringify({sc : score, id : 1})
+              var http = new XMLHttpRequest();
+              http.open("GET", "/game/end_game.php?x=" + str, true);
+              http.send();
+              scores.length = 0;
+              window.location.replace('/game/game.html');
+            }
+
         }
     }
     

@@ -9,18 +9,25 @@ $input = file_get_contents("php://input");
 $json = json_decode($input);
 $res = $json->result;
 $txid = $json->txID;
-$data = json_encode($json->data);
-$account = json_decode($data)->wallet;
-// file_put_contents("data.txt",$account);
-//debug
-$processed = json_decode($data)->processed;
-$action_traces = ($processed->action_traces)[0];
-$points = floatval($action_traces->act->data->quantity)*5;
+
 // file_put_contents("data.txt",$points);
 if($res == 1){
-	// if($points == NULL and $txid != NULL){
-		
-	// }
+	if($txid != NULL){
+		$url = 'https://eos.hyperion.eosrio.io/v2/history/get_transaction?id='. $txid;
+		$body = file_get_contents($url);
+		$body_obj = json_decode($body);
+		$account = ($body_obj->actions)[0]->act->data->from;
+		$amount = ($body_obj->actions)[0]->act->data->amount;
+		$points = floatval($amount)*5;
+
+	}else{
+		$data = json_encode($json->data);
+		$account = json_decode($data)->wallet;
+		$processed = json_decode($data)->processed;
+		$action_traces = ($processed->action_traces)[0];
+		$points = floatval($action_traces->act->data->quantity)*5;
+	}
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
