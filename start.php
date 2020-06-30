@@ -4,8 +4,8 @@ $account = $_SESSION["account"];
 // echo $account;
 
 $servername = "site-db";
-$username = "flarum_db_user";
-$password = "CduX7vqJfRx6";
+$username = "game_user";
+$password = "5DtNfLKdPdU1y6AL";
 $db_name = "goaskme_game";
 
 $conn = new mysqli($servername, $username, $password, $db_name);
