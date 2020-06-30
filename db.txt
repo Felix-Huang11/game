@@ -10,3 +10,4 @@ create table game_bonus_pool(game_id INT, game_name VARCHAR(20), cumulative_poin
 insert into game_bonus_pool values(1, "snake", 0, DEFAULT);
 insert into game_bonus_pool values(2, "2048", 0, DEFAULT);
 insert into game_bonus_pool values(3, "hitball", 0, DEFAULT);
+create table game_topup(account VARCHAR(30), txid VARCHAR(100), transaction_amount FLOAT, points_before_transaction FLOAT, transaction_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
