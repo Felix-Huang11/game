@@ -1,7 +1,7 @@
 <?php 
-	$servername = "localhost";
+	$servername = "127.0.0.1";
 	$username = "root";
-	$password = "root";
+	$password = "2cb53afKAFmg";
 	$db_name = "goaskme_game";
 	$date = new DateTime();
 	$expired = $date->getTimestamp() - 300;

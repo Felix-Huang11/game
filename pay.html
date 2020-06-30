@@ -57,7 +57,7 @@ if($_POST["points"] != NULL){
             				height: 260
             			});
                   
-            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://4beab19b9c17.ngrok.io/game/images/favicon.ico",action:"transfer",to:"e5dwgxa3e.tm",amount:tokens, contract:"e5dwgxa3e.tm",symbol:"GAMT",precision:4,desc:"Top up game points", expired:Math.round(new Date().getTime()/1000)+300, callback:"https://4beab19b9c17.ngrok.io/game/pay_poll.php"}));
+            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/game/images/favicon.ico",action:"transfer",to:"e5dwgxa3e.tm",amount:tokens, contract:"e5dwgxa3e.tm",symbol:"GAMT",precision:4,desc:"Top up game points", expired:Math.round(new Date().getTime()/1000)+300, callback:"https://game.goaskme.app/game/pay_poll.php"}));
 
                   // document.getElementById("refresh").onclick = function() {
                   //   uuid = makeid(10);

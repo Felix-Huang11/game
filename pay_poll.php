@@ -29,9 +29,9 @@ if($res == 1){
 		$points = floatval($action_traces->act->data->quantity)*5;
 	}
 
-	$servername = "localhost";
+	$servername = "127.0.0.1";
 	$username = "root";
-	$password = "root";
+	$password = "2cb53afKAFmg";
 	$db_name = "goaskme_game";
 
 

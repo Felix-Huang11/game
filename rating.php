@@ -2,9 +2,9 @@
 unset($snake_list);
 unset($erlingsiba_list);
 unset($hitball_list);
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
-$password = "root";
+$password = "2cb53afKAFmg";
 $db_name = "goaskme_game";
 $snake_list = array();
 $erlingsiba_list = array();

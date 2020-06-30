@@ -3,9 +3,9 @@ session_start();
 $points = $_POST["points"];
 $tokens = $points/5.0;
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
-$password = "root";
+$password = "2cb53afKAFmg";
 $db_name = "goaskme_game";
 $valid = 0;
 
