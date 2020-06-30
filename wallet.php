@@ -10,9 +10,9 @@
     }
 
     if($_SESSION["account"] != NULL and $_SESSION["wallet"] != NULL){
-    	$servername = "127.0.0.1";
-		$username = "root";
-		$password = "2cb53afKAFmg";
+    	$servername = "site-db";
+		$username = "flarum_db_user";
+		$password = "CduX7vqJfRx6";
 		$db_name = "goaskme_game";
 
 		$conn = new mysqli($servername, $username, $password, $db_name);

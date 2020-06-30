@@ -29,9 +29,9 @@ if($res == 1){
 		$points = floatval($action_traces->act->data->quantity)*5;
 	}
 
-	$servername = "127.0.0.1";
-	$username = "root";
-	$password = "2cb53afKAFmg";
+	$servername = "site-db";
+	$username = "flarum_db_user";
+	$password = "CduX7vqJfRx6";
 	$db_name = "goaskme_game";
 
 
