@@ -6,8 +6,8 @@
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
 <META HTTP-EQUIV="expires" CONTENT="0">
 <title>GoAskMe Wallet Login</title>
-<link rel="icon" href="https://game.goaskme.app/images/favicon.ico">
-<link rel="shortcut icon" href="https://game.goaskme.app/images/favicon.ico">
+<link rel="icon" href="https://goaskme.app/assets/favicon-6cggtolx.png">
+<link rel="shortcut icon" href="https://goaskme.app/assets/favicon-6cggtolx.png">
 <script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.4/lib/eosjs-ecc.min.js"
     integrity="sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ=="
     crossorigin="anonymous"></script>
@@ -101,11 +101,11 @@ function poll(str) {
             				height: 260
             			});
                   
-            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/images/favicon.ico",action:"login",uuID:uuid,loginUrl:"https://game.goaskme.app/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
+            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://goaskme.app/assets/favicon-6cggtolx.png",action:"login",uuID:uuid,loginUrl:"https://game.goaskme.app/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
 
                   document.getElementById("refresh").onclick = function() {
                     uuid = makeid(10);
-                    qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/images/favicon.ico",action:"login",uuID:uuid,loginUrl:"https://game.goaskme.app/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
+                    qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://goaskme.app/assets/favicon-6cggtolx.png",action:"login",uuID:uuid,loginUrl:"https://game.goaskme.app/verify.php",expired:Math.round(new Date().getTime()/1000)+300}));
                   }
 
                   // document.getElementById("login").onclick = poll(uuid);
