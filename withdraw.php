@@ -55,7 +55,7 @@ $conn->close();
 		}else{
 			alert("Error: You don't have enough points");
 		}
-		window.location.replace("wallet.html");
+		window.location.replace("wallet.php");
 
 	</script>
 

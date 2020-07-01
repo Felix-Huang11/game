@@ -16,7 +16,7 @@ include 'start.php';
 
 		}else{
 			alert("You don't have enough points(5 points/time), please check you wallet");
-			window.location.replace("wallet.html");
+			window.location.replace("wallet.php");
 		}
 	</script>
 
