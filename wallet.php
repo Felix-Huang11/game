@@ -93,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
 
                     <div class="pay">
-                        <span style="color:#F0E68C">Points:Tokens = 5 : 1</span><br><br>
+                        <span style="color:#F0E68C">Points:GAMT = 5 : 1</span><br><br>
                         <input type="number" min="5" name="points" id="points" class="points" placeholder="Enter the points " required=""/>
                     
                         <input type="submit" class="check" id ="in" onclick="send(0)" value="   TOP UP   "><br><br>
