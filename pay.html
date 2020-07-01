@@ -12,8 +12,8 @@ if($_POST["points"] != NULL){
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
 <META HTTP-EQUIV="expires" CONTENT="0">
 <title>GoAskMe Wallet Transaction</title>
-<link rel="icon" href="https://game.goaskme.app/images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="https://game.goaskme.app/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://goaskme.app/assets/favicon-6cggtolx.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://goaskme.app/assets/favicon-6cggtolx.png" type="image/x-icon">
 <script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.4/lib/eosjs-ecc.min.js"
     integrity="sha512-dYFDmK/d9r3/NCp6toLtfkwOjSMRBaEzaGAx1tfRItC0nsI0hVLERk05iNBQR7uDNI7ludYhcBI4vUiFHdjsTQ=="
     crossorigin="anonymous"></script>
@@ -58,7 +58,7 @@ if($_POST["points"] != NULL){
             				height: 260
             			});
                   
-            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://game.goaskme.app/images/favicon.ico",action:"transfer",to:"e5dwgxa3e.tm",amount:tokens, contract:"e5dwgxa3e.tm",symbol:"GAMT",precision:4,desc:"Top up game points", expired:Math.round(new Date().getTime()/1000)+300, callback:"https://game.goaskme.app/pay_poll.php"}));
+            			qrcode.makeCode(JSON.stringify({protocol:"SimpleWallet",version:"1.0",dappName:"GoAskMe",dappIcon:"https://goaskme.app/assets/favicon-6cggtolx.png",action:"transfer",to:"e5dwgxa3e.tm",amount:tokens, contract:"e5dwgxa3e.tm",symbol:"GAMT",precision:4,desc:"Top up game points", expired:Math.round(new Date().getTime()/1000)+300, callback:"https://game.goaskme.app/pay_poll.php"}));
 
                   // document.getElementById("refresh").onclick = function() {
                   //   uuid = makeid(10);
