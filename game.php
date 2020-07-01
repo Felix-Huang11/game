@@ -59,9 +59,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="menu"><img src="images/menu.png" alt=""> </span>
                         
                     <ul>
-                        <li class="active"><a class="color1" href="./game.html" style="font-size: 1.75em; color: #fd9f3e" >Home</a></li>
-                        <li><a class="color2" href="./wallet.html" style="font-size: 1.75em; color:#d52685" >Wallet</a></li>
-                        <li><a class="color3" href="./rating.html" style="font-size: 1.75em; color:#FF0000" >Rating</a></li>
+                        <li class="active"><a class="color1" href="./game.php" style="font-size: 1.75em; color: #fd9f3e" >Home</a></li>
+                        <li><a class="color2" href="./wallet.php" style="font-size: 1.75em; color:#d52685" >Wallet</a></li>
+                        <li><a class="color3" href="./rating.php" style="font-size: 1.75em; color:#FF0000" >Rating</a></li>
                         
                         <!-- <div class="clearfix"> </div> -->
                     </ul>
@@ -95,16 +95,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="main">
             <ul id="og-grid" class="og-grid">
                 <li>
-                        <a href="/game/snake_start.html" data-largesrc="./images/snake.png" data-title="Snake" data-description="Snake Description: Use the WASD keys to control the snake. Four button controllers is for mobile users' convenience. Collect the apples as much as you can. The snake will die if it either hits the wall or eats its body.">                                                        <img class="img-responsive" src="./images/snake.png" alt="img01"/>
+                        <a href="/game/snake_start.php" data-largesrc="./images/snake.png" data-title="Snake" data-description="Snake Description: Use the WASD keys to control the snake. Four button controllers is for mobile users' convenience. Collect the apples as much as you can. The snake will die if it either hits the wall or eats its body.">                                                        <img class="img-responsive" src="./images/snake.png" alt="img01"/>
                         </a>
                 </li>
                 <li>
-                        <a href="2048_start.html" data-largesrc="./images/2048.png" data-title="2048" data-description="2048 Description: This game's objective is to use the top, left, down, right arrow keys to slide numbered tiles on a grid to combine them to create a tile with the number 2048. However, players can continue to play the game after reaching the goal, creating tiles with larger numbers.">
+                        <a href="2048_start.php" data-largesrc="./images/2048.png" data-title="2048" data-description="2048 Description: This game's objective is to use the top, left, down, right arrow keys to slide numbered tiles on a grid to combine them to create a tile with the number 2048. However, players can continue to play the game after reaching the goal, creating tiles with larger numbers.">
                                 <img class="img-responsive" src="./images/2048.png" alt="img02"/>
                         </a>
                 </li>
                 <li>
-                        <a href="ball_start.html" data-largesrc="./images/hit.png" data-title="Hitball"  data-description="Hitball Description: Press the screen or hold the left button of the mouse to choose the direction of launch. The longer you hold it, the greater the power is. You will gain one point for hitting each yellow ball. The game ends when you hit the red ball.">
+                        <a href="ball_start.php" data-largesrc="./images/hit.png" data-title="Hitball"  data-description="Hitball Description: Press the screen or hold the left button of the mouse to choose the direction of launch. The longer you hold it, the greater the power is. You will gain one point for hitting each yellow ball. The game ends when you hit the red ball.">
                         <img class="img-responsive" src="./images/hit.png" alt="img03"/></a>
                 </li>
             </ul>

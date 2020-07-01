@@ -38,7 +38,7 @@ if($_POST["points"] != NULL){
     // var http = new XMLHttpRequest();
     // http.open("GET", "update_points.php?p=" + str , true);
     // http.send();
-    window.location.replace("wallet.html");
+    window.location.replace("wallet.php");
 }
 </script>
 <!--main-->
