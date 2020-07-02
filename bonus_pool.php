@@ -1,4 +1,4 @@
-#!/usr/bin/php
+#!/usr/local/bin/php
 <?php
 //use crontab: 0 0 * * * /Library/WebServer/Documents/bonus_pool.php /usr/bin/php
 // This php file should run once a day(00:00)
