@@ -72,7 +72,7 @@ if($_POST["points"] != NULL){
             </script>
 		</div>
 		<div class="notice">
-                <span>Transaction: scan the QR code via your wallet application</span>
+                <span>Transaction: scan the QR code via your wallet application (We recommend mobile users take the screenshot of the QR code instead of saving the QR code image to local album)</span>
         </div>
         <div class="buttonBox">
             <button class="button" id="continue" onclick="redirect()">continue</button>
